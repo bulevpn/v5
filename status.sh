@@ -1,8 +1,8 @@
 #!/bin/bash
 # Welcome Information
 # Edition : Stable Edition V1.0
-# Author  : Putra Meratus
-# (C) Copyright 2021-2023 By Papada'an Store
+# Author  : Badbud Store
+# (C) Copyright 2021-2023 By Badbud Store
 # =========================================
 
 # // Exporting Language to UTF-8
