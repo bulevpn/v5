@@ -110,7 +110,7 @@ zip -rP $InputPass $NameUser.zip backup > /dev/null 2>&1
 ##############++++++++++++++++++++++++#############
 LLatest=`date`
 Get_Data () {
-git clone https://github.com/ptmrtsy/userbackup.git /root/user-backup/ &> /dev/null
+git clone https://github.com/bulevpn/userbackup.git /root/user-backup/ &> /dev/null
 }
 
 Mkdir_Data () {
@@ -130,15 +130,15 @@ mv /root/$NameUser.zip /root/user-backup/$NameUser/
 
 Save_And_Exit () {
     cd /root/user-backup
-    git config --global user.email "johnwilcox00460@outlook.com" &> /dev/null
-    git config --global user.name "ptmrtsy" &> /dev/null
+    git config --global user.email "smae18751" &> /dev/null
+    git config --global user.name "bulevpn" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
     git commit -m $NameUser &> /dev/null
     git branch -M main &> /dev/null
-    git remote add origin https://github.com/ptmrtsy/userbackup.git
-    git push -f https://github.com/ptmrtsy/userbackup.git &> /dev/null
+    git remote add origin https://github.com/bulevpn/userbackup.git
+    git push -f https://github.com/bulevpn/userbackup.git &> /dev/null
 }
 
 if [ ! -d "/root/user-backup/" ]; then
@@ -156,7 +156,7 @@ echo -e "[ ${green}INFO${NC} ] Processing updating server...... "
 echo -e ""
 echo -e "$yellow COPY Username git DI BAWAH INI$NC"
 echo -e""
-echo -e "$yellow Username git :👉  ptmrtsy  👈$NC"
+echo -e "$yellow Username git :👉  bulevpn  👈$NC"
 echo -e""
 echo -e "$yellow Password git :👉  Hubungi Admin Untuk Meminta Password git  👈$NC"
 echo -e""
@@ -164,7 +164,7 @@ echo -e "$yellow PASTEKAN Username GITHUB DI BAWAH INI$NC"
 echo -e ""
 Save_And_Exit
 fi
-link="https://raw.githubusercontent.com/ptmrtsy/userbackup/main/$NameUser/$NameUser.zip"
+link="https://raw.githubusercontent.com/bulevpn/userbackup/main/$NameUser/$NameUser.zip"
 sleep 1
 echo -e "[ ${red}INFO${NC} ] Backup done "
 sleep 1
@@ -200,7 +200,7 @@ function restore2(){
 cd
 read -rp "Enter Name File Your Backup  : " -e NameUser
 
-cekdata=$(curl -sS https://raw.githubusercontent.com/ptmrtsy/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
+cekdata=$(curl -sS https://raw.githubusercontent.com/bulevpn/userbackup/main/$NameUser/$NameUser.zip | grep 404 | awk '{print $1}' | cut -d: -f1)
 
 [[ "$cekdata" = "404" ]] && {
 red "Data not found / you never backup"
@@ -213,7 +213,7 @@ echo -e "[ ${GREEN}INFO${NC} ] • Restore Data..."
 read -rp "Password File: " -e InputPass
 echo -e "[ ${GREEN}INFO${NC} ] • Downloading data.."
 mkdir -p /root/backup
-wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/ptmrtsy/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
+wget -q -O /root/backup/backup.zip "https://raw.githubusercontent.com/bulevpn/userbackup/main/$NameUser/$NameUser.zip" &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Getting your data..."
 unzip -P $InputPass /root/backup/backup.zip &> /dev/null
 echo -e "[ ${GREEN}INFO${NC} ] • Starting to restore data..."
